@@ -1,0 +1,25 @@
+{
+    "name": "twyco/image-system",
+    "description": "Laravel Image System",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Twyco\\ImageSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Twyco",
+            "email": "twyco@icloud.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Twyco\\ImageSystem\\ImageSystemServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
