@@ -12,9 +12,8 @@ class ImageService
 
     public function store(UploadedFile $file, ?Model $owner = null): Image
     {
-        $time = time();
-        $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-        $filename = 'images/'.$originalName.'_'.$time.'.'.$file->getClientOriginalExtension();
+        $filename = 'images/' . uniqid() . '_' . time() . '.' . $file->guessExtension();
+
         Storage::disk($this->disk)->put($filename, file_get_contents($file));
 
         $image = new Image(['image_path' => $filename]);
