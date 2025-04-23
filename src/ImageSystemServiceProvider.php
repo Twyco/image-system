@@ -4,7 +4,7 @@ namespace Twyco\ImageSystem;
 
 use Illuminate\Support\ServiceProvider;
 
-class ImageSystemServiceProvider
+class ImageSystemServiceProvider extends ServiceProvider
 {
     public function boot()
     {
