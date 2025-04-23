@@ -10,10 +10,9 @@ class ImageService
 {
     public function __construct(protected string $disk = 'public') {}
 
-    public function store(UploadedFile $file, ?Model $owner = null): Image
+    public function store(UploadedFile $file, ?Model $owner = null, ?string $imageName = ''): Image
     {
-        $filename = 'images/' . uniqid() . '_' . time() . '.' . $file->guessExtension();
-        dd($filename);
+        $filename = 'images/' . uniqid($imageName) . '_' . time() . '.' . $file->guessExtension();
         Storage::disk($this->disk)->put($filename, file_get_contents($file));
 
         $image = new Image(['image_path' => $filename]);
