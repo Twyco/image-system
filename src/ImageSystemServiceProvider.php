@@ -17,6 +17,10 @@ class ImageSystemServiceProvider extends ServiceProvider
 
     public function register()
     {
-        //
+        $this->app->singleton(ImageService::class, function ($app) {
+            return new ImageService(
+                config('image-system.disk', 'public')
+            );
+        });
     }
 }
