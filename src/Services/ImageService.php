@@ -13,7 +13,7 @@ class ImageService
     public function store(UploadedFile $file, ?Model $owner = null): Image
     {
         $filename = 'images/' . uniqid() . '_' . time() . '.' . $file->guessExtension();
-
+        dd($filename);
         Storage::disk($this->disk)->put($filename, file_get_contents($file));
 
         $image = new Image(['image_path' => $filename]);
