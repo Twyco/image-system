@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property string $owner_type
  * @property mixed $owner
  * @property string $image_path
+ * @property string $file
+ * @property string $url
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
