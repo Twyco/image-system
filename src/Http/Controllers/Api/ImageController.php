@@ -16,7 +16,7 @@ class ImageController extends Controller
 
     public function paginate(Request $request)
     {
-        $images = Image::paginate(25);
+        $images = Image::paginate(12);
 
         return response(GenericPaginationResource::make($images, ImageResource::class), 200);
     }
